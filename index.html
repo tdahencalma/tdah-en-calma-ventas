@@ -128,6 +128,18 @@ h1 em{font-style:normal;display:inline-block;padding:0 14px;border-radius:14px;b
 .annual .sv{margin-top:8px;font-size:15px;line-height:1.5;color:var(--body)}
 .fine{margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted)}
 .btn.alt{background:#fff;color:var(--violet);border:2px solid var(--violet);box-shadow:none}
+.offer .info{flex:1 1 420px;min-width:0}
+.offer .info .checks{margin-top:22px}
+.plans{display:flex;flex-wrap:wrap;gap:24px;margin-top:44px;align-items:stretch}
+.plan{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;padding:32px 28px;border-radius:26px;background:#fff;border:2px solid var(--line);text-align:center;position:relative}
+.plan.best{border:3px solid var(--violet);box-shadow:0 28px 70px -30px rgba(106,43,217,.45)}
+.plan .tag{align-self:center;margin-bottom:10px;padding:5px 14px;border-radius:999px;background:var(--mint);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--forest)}
+.plan .tag.soft{background:#F1EEE6;color:var(--muted)}
+.plan .pname{font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;color:var(--forest)}
+.plan .price{margin-top:12px}
+.plan .psub{margin:10px 0 22px;font-size:15px;line-height:1.5;font-weight:600;color:var(--muted);flex:1}
+.plan .btn{margin-top:auto}
+.offerfoot{max-width:720px;margin:28px auto 0}
 .guar{margin-top:22px;padding:18px 20px;border-radius:16px;background:var(--mint);text-align:left;font-size:15px;line-height:1.5}
 
 /* Cierre y FAQ */
@@ -301,11 +313,9 @@ footer p{margin:0 auto;max-width:680px}
 <div class="wrap">
 <div class="grid">
 <div class="pic"><img class="shot" src="images/acceso-mujer.jpg" width="1400" height="791" loading="lazy" alt="Una mujer entra a la app TDAH en calma desde su laptop, con material impreso sobre la mesa"></div>
-<div class="card">
+<div class="info">
 <p class="eyebrow">Acceso completo</p>
 <h2 class="d" style="margin-top:10px;font-weight:700;font-size:30px;line-height:1.15">TDAH en calma: Convierte el caos en enfoque</h2>
-<p class="price">US$9.99 <small>/ mes</small></p>
-<p style="margin-top:8px;font-size:15px;font-weight:600;color:var(--muted)">Suscripción mensual</p>
 <ul class="checks">
 <li>Protocolo guiado de 7 días con video en cada módulo</li>
 <li>Herramientas y juegos de concentración</li>
@@ -314,19 +324,30 @@ footer p{margin:0 auto;max-width:680px}
 <li>3 bonos que se desbloquean al completar el Día 7</li>
 <li>Nuevos ejercicios y herramientas cada mes</li>
 </ul>
-<a class="btn buy" href="#oferta" style="margin-top:28px;display:flex;min-height:62px;font-size:18px">EMPEZAR CON EL PLAN MENSUAL</a>
+</div>
+</div>
+<div class="plans">
+<div class="plan">
+<span class="tag soft">SIN COMPROMISO</span>
+<p class="pname">Plan mensual</p>
+<p class="price">US$9.99 <small>/ mes</small></p>
+<p class="psub">Suscripción mensual</p>
+<a class="btn buy" href="#oferta" style="display:flex;min-height:60px;font-size:17px">EMPEZAR CON EL PLAN MENSUAL</a>
 <p class="fine">Se cobra US$9.99 cada mes y se renueva automáticamente hasta que canceles. Puedes cancelar cuando quieras.</p>
-<div class="annual">
+</div>
+<div class="plan best">
 <span class="tag">MEJOR VALOR</span>
-<p class="aprice">US$79.99 <small>/ año</small></p>
-<p class="sv">Equivale a unos US$6.67 al mes. Ahorras casi 4 meses frente al plan mensual.</p>
-<a class="btn alt buy-anual" href="#oferta" style="margin-top:18px;display:flex;min-height:58px;font-size:17px">ELEGIR EL PLAN ANUAL</a>
+<p class="pname">Plan anual</p>
+<p class="price">US$79.99 <small>/ año</small></p>
+<p class="psub">Equivale a unos US$6.67 al mes. Ahorras casi 4 meses frente al plan mensual.</p>
+<a class="btn buy-anual" href="#oferta" style="display:flex;min-height:60px;font-size:17px">ELEGIR EL PLAN ANUAL</a>
 <p class="fine">Se cobra US$79.99 una vez al año y se renueva automáticamente cada año hasta que canceles.</p>
 </div>
-<p style="margin-top:14px;font-size:14px;color:var(--muted)">Pago seguro procesado por Hotmart · Acceso inmediato después de la compra</p>
+</div>
+<div class="offerfoot">
+<p style="font-size:14px;color:var(--muted);text-align:center">Pago seguro procesado por Hotmart · Acceso inmediato después de la compra</p>
 <div class="guar"><strong>Garantía de 7 días.</strong> Si sientes que no es para ti, puedes solicitar tu reembolso dentro de los primeros 7 días. Vale para el plan mensual y para el anual.</div>
 <p class="fine" style="text-align:center">¿Dudas antes de comprar? Escríbenos a <a href="mailto:tdahencalma.soporte@gmail.com" style="color:var(--violet);font-weight:600">tdahencalma.soporte@gmail.com</a></p>
-</div>
 </div>
 </div>
 </section>
@@ -369,7 +390,8 @@ footer p{margin:0 auto;max-width:680px}
 <p class="d" style="font-weight:700;font-size:18px">TDAH en calma · @entiendeatuhijo</p>
 <p style="margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted)">TDAH en calma es una herramienta educativa y de acompañamiento para madres y padres. No sustituye la atención de un profesional de la salud ni ofrece diagnósticos.</p>
 <p style="margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted)">¿Necesitas ayuda? Escríbenos a <a href="mailto:tdahencalma.soporte@gmail.com" style="color:var(--violet);font-weight:600">tdahencalma.soporte@gmail.com</a></p>
-<p style="margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted)"><a href="terminos.html" style="color:var(--violet);font-weight:600">Términos y Condiciones</a></p> </footer>
+<p style="margin-top:14px;font-size:14px;line-height:1.6;color:var(--muted)"><a href="terminos.html" style="color:var(--violet);font-weight:600">Términos y Condiciones</a></p>
+</footer>
 
 <div class="sticky" id="sticky"><a class="btn" href="#oferta">QUIERO MI ACCESO · DESDE US$9.99/mes</a></div>
 
