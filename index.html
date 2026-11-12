@@ -107,6 +107,7 @@ h1 em{font-style:normal;display:inline-block;padding:0 14px;border-radius:14px;b
 /* Para quién */
 .who{flex:1 1 260px;min-width:0;padding:28px;border-radius:22px;background:#fff;border:1.5px solid var(--line);text-align:center}
 .who span{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--mint)}
+.who .who-img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:14px;display:block}
 .who h3{margin-top:14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:21px}
 .who p{margin-top:8px;font-size:16px;line-height:1.55;color:var(--body)}
 .quote{max-width:720px;margin:36px auto 0;padding:22px 26px;border-radius:18px;background:#fff;border:1.5px solid var(--line);text-align:center;font-size:19px;font-weight:600;line-height:1.5}
@@ -170,6 +171,18 @@ footer p{margin:0 auto;max-width:680px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
+<style>
+html.lock header.hero .in,html.lock header.hero .mini,html.lock header.hero ~ *:not(script),html.lock .sticky{display:none !important}
+html.lock header.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.vsl-note{display:none;margin-top:18px;text-align:center;font-size:15px;color:var(--muted)}
+html.lock .vsl-note{display:block}
+@keyframes unlockin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+html.unlocking header.hero .in,html.unlocking header.hero ~ *:not(script){animation:unlockin .6s ease both}
+</style>
+<script>
+// Candado del video: si la persona aún no vio el video, se muestra solo el video.
+try { if (!localStorage.getItem("vsl_visto") || /[?&]video=1/.test(location.search)) document.documentElement.classList.add("lock"); } catch (e) { document.documentElement.classList.add("lock"); }
+</script>
 </head>
 <body>
 
@@ -195,6 +208,7 @@ footer p{margin:0 auto;max-width:680px}
 <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/p7h5bxsprw?web_component=true&seo=true" title="Video VSL" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="100%"></iframe></div></div>
 <script src="https://fast.wistia.net/player.js" async></script>
 </div>
+<p class="vsl-note">Cuando termine el video, verás los planes y el botón de acceso.</p>
 </div>
 </div>
 
@@ -315,9 +329,9 @@ footer p{margin:0 auto;max-width:680px}
 <div class="wrap center">
 <h2 class="h2">¿Para quién es TDAH en calma?</h2>
 <div class="row" style="text-align:left">
-<div class="who" style="text-align:center"><span aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#178A63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg></span><h3>Madres y padres agotados</h3><p>Que sienten que lo han intentado todo y nada parece funcionar con su hijo.</p></div>
-<div class="who"><span aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#178A63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg></span><h3>Quienes quieren entender</h3><p>Que desean saber qué pasa en la mente de su hijo y cómo acompañarlo de verdad.</p></div>
-<div class="who"><span aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#178A63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg></span><h3>Familias que buscan paz</h3><p>Que quieren un hogar con menos conflictos, más conexión y días más tranquilos.</p></div>
+<div class="who" style="text-align:center"><img class="who-img" src="images/para-quien-1.jpg" width="600" height="400" loading="lazy" alt="Una madre cansada y pensativa en la mesa de su cocina" onerror="this.style.display='none'"><h3>Madres y padres agotados</h3><p>Que sienten que lo han intentado todo y nada parece funcionar con su hijo.</p></div>
+<div class="who"><img class="who-img" src="images/para-quien-2.jpg" width="600" height="400" loading="lazy" alt="Una madre y su hijo miran juntos una tablet en el sofá" onerror="this.style.display='none'"><h3>Quienes quieren entender</h3><p>Que desean saber qué pasa en la mente de su hijo y cómo acompañarlo de verdad.</p></div>
+<div class="who"><img class="who-img" src="images/para-quien-3.jpg" width="600" height="400" loading="lazy" alt="Una familia se abraza y ríe en su sala al atardecer" onerror="this.style.display='none'"><h3>Familias que buscan paz</h3><p>Que quieren un hogar con menos conflictos, más conexión y días más tranquilos.</p></div>
 </div>
 <p class="quote">«Si sientes que tu hijo tiene un potencial enorme pero algo se lo bloquea, esta mini app está pensada para ti.»</p>
 </div>
@@ -409,6 +423,27 @@ footer p{margin:0 auto;max-width:680px}
 
 <div class="sticky" id="sticky"><a class="btn" href="#oferta">QUIERO MI ACCESO · DESDE US$9.99/mes</a></div>
 
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+<script>
+(function () {
+  var root = document.documentElement;
+  function unlock(scroll) {
+    if (!root.classList.contains("lock")) return;
+    try { localStorage.setItem("vsl_visto", "1"); } catch (e) {}
+    root.classList.add("unlocking");
+    root.classList.remove("lock");
+    if (scroll) { var t = document.getElementById("inicio"); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    setTimeout(function () { root.classList.remove("unlocking"); }, 900);
+  }
+  window.__unlockVideo = unlock;
+  window._wq = window._wq || [];
+  window._wq.push({ id: "p7h5bxsprw", onReady: function (video) {
+    video.bind("end", function () { unlock(true); });
+  } });
+  // Si el reproductor no carga en 25 segundos, se muestra la página para no perder la venta.
+  setTimeout(function () { if (!window.Wistia || !window.Wistia.api || !window.Wistia.api("p7h5bxsprw")) unlock(false); }, 25000);
+})();
+</script>
 <script>
 // Pega aquí tu enlace de compra de Hotmart (entre las comillas).
 // Mientras esté como "#oferta", los botones solo llevan a la sección de oferta.
